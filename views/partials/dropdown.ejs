@@ -1,0 +1,12 @@
+<div class="form-floating">
+<select class="form-select" id="<%= name %>" name="<%= name %>" aria-label="Floating label select example">
+  <option></option>
+  <% for(var i = 0; i < options.length; i++) { %>
+    <option value='<%= options[i].value %>'><%= options[i].name %></option>
+  <% } %>
+</select>
+<label for="<%= name %>"><%= label %></label>
+<div class="invalid-feedback">
+  Please select and item from the list
+</div>
+</div>

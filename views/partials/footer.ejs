@@ -1,0 +1,142 @@
+<!--<p>This is the footer!</p>-->
+<footer id="sticky-footer" class="text-center text-white" style="background-color: #0a4275;">
+    <!-- Grid container -->
+    
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © <span id="year"></span> Copyright True Legacy Homes   |    
+      <a class="text-white" href="https://www.trusponse.com/" style="text-decoration: none;" target="_blank">  Built by TruSponse, LLC</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+
+
+<!-- Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap5.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap-datepicker-en-CA.min"></script>
+
+<script type="text/javascript">
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+// DO NOT REMOVE - TBrannon (08/28/2021) -----------------------------------------------
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+
+<script>
+
+  
+  $(document).ready(function() {
+    $(document).on('change', '.form-control-saledate', function() {
+      var saleDate;
+      saleDate = $(' #saledate ').val();
+      var targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 10);
+      var dd = targetDate.getDate();
+      var mm = targetDate.getMonth() + 1;
+      var yyyy = targetDate.getFullYear();
+      var dateString = mm + "/" + dd + "/" + yyyy;
+      $(' #paymentduedate ').val(dateString);
+    });
+  });
+</script>
+
+
+<script>
+  $('.mydatatable').DataTable({
+      lengthMenu:[[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+
+  });
+</script>
+
+
+
+<!-- <script type="text/javascript">
+  function validate() {
+    var grosssalescash = document.forms["inputform"]["grosssalescash"].value;
+
+    if(isNaN(grosssalescash)){
+      event.preventDefault();
+      event.stopPropagation();
+      document.getElementById('invalid-feedback-gross-sales-cash').innerHTML="Please enter a valid numeric value";
+      console.log("Gross Sales Cash NaN error")
+      return false;
+    } else {
+      console.log("NO ERROR")
+    }
+  }
+</scrip> -->
+
+
+<script>
+  function setTwoNumberDecimal(el) {
+    
+    el.value = parseFloat(el.value).toFixed(2);
+    
+  };
+</script>
+
+
+<script>
+    $('.dropdown-toggle').dropdown()
+</script>
+<script>
+    var date = new Date().getFullYear();
+    document.getElementById("year").innerHTML = date;
+</script>
+<!-- <script>
+    $(document).ready(function() {
+        var date_input = $('input[name="date"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            autoclose: true,
+            todayHighlight: true
+        };
+        date_input.datepicker(options);
+    })
+</script>
+
+
+<script>
+    $('#datetimepicker').datetimepicker({
+        timepicker: false,
+        format: 'm/d/y',
+        "setDate": new Date(),
+        autoClose: true
+    });
+</script> -->
+
+
+</body>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$('.table').footable();
+});
+
+</script>
+
+</html>

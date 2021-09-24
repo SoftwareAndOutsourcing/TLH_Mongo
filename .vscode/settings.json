@@ -1,0 +1,5 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/883e508c-7fa6-4410-a3d3-5d03a6653271/resourceGroups/true-legacy-homes/providers/Microsoft.Web/sites/true-legacy-homes",
+  "appService.deploySubpath": ".",
+  "workbench.colorTheme": "Cyberpunk"
+}

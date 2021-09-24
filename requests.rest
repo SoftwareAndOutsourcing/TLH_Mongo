@@ -1,0 +1,11 @@
+GET http://localhost:3000/api/users
+
+###
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email_address": "todd@toddbrannon.com",
+    "password": "password1234"
+}

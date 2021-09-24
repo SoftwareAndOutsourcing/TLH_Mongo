@@ -1,0 +1,4 @@
+.env
+node_modules/
+archive/
+readme_internal.md

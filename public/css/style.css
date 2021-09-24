@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Arimo|Arsenal|Caveat|Days+One|Economica|Exo|Gochi+Hand|Harmattan|Kalam|Kaushan+Script|Lato|Mr+Dafoe|Orienta|Oswald|Pavanam|Permanent+Marker|Raleway|Roboto|Roboto+Condensed|Satisfy|Source+Sans+Pro");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+body {
+  min-height: 100vh;
+  color: #114573 !important;
+}
+
+.navbar-brand {
+  color: #00bdb0 !important;
+}
+
+.nav-true-legacy {
+  background-color: #ffffff !important;
+}
+
+.btn-outline-secondary {
+  padding: 1em 2em 0.2em !important;
+  background-color: #d6fcf8;
+  color: #019e91;
+  border-color: #ffffff;
+}
+
+.btn-outline-secondary p {
+  font-size: 0.65em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #7f7f7f;
+}
+
+#sticky-footer {
+  position: sticky;
+  top: 100%;
+}
+.heading-container {
+  text-align: right;
+  padding-bottom: 2em;
+  padding-left: 3em;
+}
+.container-header {
+  min-height: calc(100vh - 58px);
+}
+
+.input-section {
+  padding-top: 0;
+  padding-bottom: 1em;
+  color: #ffffff;
+}
+
+.card-body {
+  margin-bottom: 1.25em;
+  opacity: 0.6;
+}
+
+.table-bordered {
+  border-color: #114573 !important;
+  color: #114573 !important;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #d1e8fc !important;
+  color: #114573 !important;
+}
+
+.table th {
+  background-color: #114573 !important;
+  color: #ffffff;
+  border-color: #114573 !important;
+}
+
+.table a {
+  color: #114573 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.page-item.active .page-link {
+  background-color: #00bdb0 !important;
+  border-color: #00bdb0 !important;
+}
+
+.page-link {
+  color: #00bdb0;
+}
+
+.logo-container {
+  margin-left: 0;
+  margin-right: 0 !important;
+  justify-content: center;
+  background-color: #00bdb0;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: clamp(40px, 5vw, 70px);
+}
+
+.display-4 {
+  font-size: clamp(30px, 2vw, 2em);
+}
+
+p {
+  font-size: clamp(1em, 2vw, 2em);
+}
+
+.footer {
+  position: relative;
+}
+
+.select-label {
+  font-size: clamp(22px, 1vw, 1em);
+}
+
+.fw-lighter {
+  font-size: clamp(20px, 1vw, 1em);
+}
+
+.form-check {
+  /* padding-left: 3em; */
+  font-size: clamp(1em, 2em, 1em);
+}
+
+/* .form-check input {
+  font-size: clamp(1.75em, 1vw, 1em);
+} */
+
+.form-check label {
+  font-size: clamp(1em, 1vw, 1em);
+  padding-left: 10px !important;
+}
+
+.btn-select-action {
+  background-color: #00bdb0 !important;
+  color: #ffffff !important;
+}
+
+/* Eliminate the card body padding and hide "Use shift or ctrl to multiselect" for mobile screens */
+@media only screen and (max-width: 1200px) {
+  html {
+    width: 100%;
+  }
+  .container-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .logo-image {
+    width: 60%;
+    height: 100%;
+  }
+  .logo-container {
+    background-color: #00bdb0;
+  }
+  .navbar-brand {
+    font-size: 0em;
+  }
+  .logged-in-user {
+    font-size: 0.9em;
+  }
+  .btn-outline-secondary {
+    padding: 8px 16px !important;
+    font-size: 1.25 em;
+  }
+  .card-body {
+    padding: 1rem !important;
+  }
+
+  .fw-lighter {
+    /* visibility: hidden; */
+    font-size: 1em;
+  }
+  .form-check {
+    padding-left: 1.5em;
+  }
+  .form-check label {
+    font-size: 1rem;
+  }
+  .form-check input {
+    font-size: 30px;
+  }
+  .display-4 {
+    font-size: 1.75em;
+  }
+  .display-6 {
+    font-size: 2em;
+  }
+  .existing-lenders {
+    font-size: 2rem;
+  }
+
+  .dataTables_length label,
+  .form-select {
+    font-size: 1rem !important;
+  }
+
+  .dataTables_length {
+    padding-bottom: 1rem;
+  }
+
+  .dataTables_filter label,
+  input {
+    font-size: 1rem !important;
+  }
+
+  .dataTables_info {
+    padding-bottom: 1rem;
+  }
+
+  .table {
+    font-size: 0.75rem;
+  }
+
+  .table .btn {
+    font-size: 1.25rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+  .form-floating > .form-control,
+  .form-floating > .form-select {
+    height: calc(3.3rem + 2px);
+    line-height: 1.35;
+  }
+  .form-control {
+    font-size: 1.85rem;
+  }
+
+  /* .form-control label {
+    font-size: 2.85rem;
+  } */
+
+  .form-select {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+  .select-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .btn {
+    padding: 0.75rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+  }
+}
