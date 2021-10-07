@@ -46,24 +46,18 @@
 
 <script>
 
-  // Autofill 'payment due date' field with date 10 days out from 'sale date'  - ADDED 9/25/2021
+  
   $(document).ready(function() {
     $(document).on('change', '.form-control-saledate', function() {
       var saleDate;
       saleDate = $(' #saledate ').val();
-      var targetDate = new Date(saleDate);
-      targetDate.setDate(targetDate.getDate() + 11);
-      var dd = ("0" + targetDate.getDate()).substr(-2);
-      var mm = ("0" + (targetDate.getMonth() + 1)).substr(-2);
+      var targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 10);
+      var dd = targetDate.getDate();
+      var mm = targetDate.getMonth() + 1;
       var yyyy = targetDate.getFullYear();
-      var dateString = [yyyy, mm, dd].join('-');
-    
-      // trigger() does not affect addEventListener callbacks
-      let o = $(' #paymentduedate ');
-      o.val(dateString).trigger('change');
-      if (o.length)
-        o[0].dispatchEvent(new Event('change'));
-      confirmElementHasValue(o[0]); // call section-logic.js method
+      var dateString = mm + "/" + dd + "/" + yyyy;
+      $(' #paymentduedate ').val(dateString);
     });
   });
 </script>

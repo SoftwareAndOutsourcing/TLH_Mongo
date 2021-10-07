@@ -14,6 +14,8 @@
           <div class="card-body text-center" style="background-color: #bfc8da; padding: 3em 1em;">
             <h1 class="display-6">Edit Sale</h1>
             
+            
+            
             <div class="container mb-3 mt-3">
             <form action="/sales/<%= saleresult.job_id %>?_method=PUT" method="POST" name="inputform" class="inner-outer-container py-4 needs-validation" onSubmit="return validate()" novalidate>
               
@@ -55,13 +57,17 @@
                 <div class="col-lg-12 py-1">
                     <div class="row g-2">
                         <div class="col-md">
-                            <%- include ('partials/dropdown', {
-                              options: marketArray.map(m => {
-                                return { name: m.market_name, value: m.market_id }
-                              }),
-                              name: "market",
-                              label: "Market"
-                        }) -%>
+                          <select class="form-select" id="market" name="market" aria-label="Floating label select example" required="">
+                            <option></option>
+                            
+                              <option value="San Diego">San Diego</option>
+                            
+                              <option value="OC">OC</option>
+                            
+                              <option value="Los Angeles">Los Angeles</option>
+                            
+                          </select>
+
                           </div>
                         <div class="col-md">
                             <div class="form-floating">

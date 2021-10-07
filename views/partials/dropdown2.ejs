@@ -1,5 +1,5 @@
 <div class="form-floating">
-<select class="form-select" id="<%= name %>" name="<%= name %>" aria-label="Floating label select example" required>
+<select class="form-select" id="<%= name %>" name="<%= name %>" aria-label="Floating label select example" value="<%= salesresult.market %>" required>
   <option></option>
   <% for(var i = 0; i < options.length; i++) { %>
     <option value='<%= options[i].value %>'><%= options[i].name %></option>

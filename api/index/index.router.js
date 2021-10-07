@@ -158,6 +158,7 @@ router.post('/input1', (req, res) => {
     const transactionsOpeningDay = req.body.transactionsopeningday
     const clientName = req.body.clientname
     const checkPayableTo = req.body.checkpayableto
+    const paymentDueDate = req.body.paymentduedate
     const clientEmail = req.body.clientemail
     const transactionTotal = req.body.transactiontotal
     const clientMailingAddress1 = req.body.clientmailingaddress1
@@ -171,7 +172,7 @@ router.post('/input1', (req, res) => {
     const clientPostalCode = req.body.zip
     const taxesFees = req.body.taxesfees
     const additionalDonationLoanCost = req.body.additionaldonationloancost
-
+    const courtesyDiscount = req.body.courtesydiscount
 
     const sql = `INSERT INTO input (job_name, 
                                         hours_staging_budget,
@@ -212,6 +213,7 @@ router.post('/input1', (req, res) => {
                                         client_city,
                                         client_state,
                                         client_postal_code,
+                                        payment_due_date,
                                         taxes_fees,
                                         additional_donation_loan_cost,
                                         courtesy_discount
@@ -221,7 +223,7 @@ router.post('/input1', (req, res) => {
                                         ?,?,?,?,?,?,?,?,?,?,
                                         ?,?,?,?,?,?,?,?,?,?,
                                         ?,?,?,?,?,?,?,?,?,?,
-                                        ?,?
+                                        ?,?,?
                                         )`
 
     pool.query(sql, [jobName,
@@ -263,6 +265,7 @@ router.post('/input1', (req, res) => {
         clientCity,
         clientState,
         clientPostalCode,
+        paymentDueDate,
         taxesFees,
         additionalDonationLoanCost,
         courtesyDiscount
