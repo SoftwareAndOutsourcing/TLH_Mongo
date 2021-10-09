@@ -1,7 +1,7 @@
 {
   "name": "true_legacy_homes",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node/Express/MySQL web application for True Legacy Homes (Estate Sales) Created 8/8/2021 ==================================================================== ====================================================================",
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js"
@@ -11,6 +11,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
@@ -18,8 +19,18 @@
     "http-errors": "^1.7.2",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
+    "mongoose": "^6.0.10",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.12"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toddbrannon/true_legacy_homes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toddbrannon/true_legacy_homes/issues"
+  },
+  "homepage": "https://github.com/toddbrannon/true_legacy_homes#readme"
 }

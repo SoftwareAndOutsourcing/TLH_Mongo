@@ -12,8 +12,6 @@ const port = process.env.PORT;
 
 // Requiring Routes
 const indexRouter = require('./api/index/index.router')
-const userRouter = require('./api/users/user.router')
-const salesRouter = require('./api/sales/sales.router');
 
 const app = express();
 
@@ -36,8 +34,6 @@ app.use(flash());
 
 // Using Routes ==========================================
 app.use('/', indexRouter)   
-app.use('/api/users/', userRouter)
-app.use('/api/sales/', salesRouter)
 
 // listen for requests
 app.listen(process.env.PORT, () => {
