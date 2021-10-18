@@ -48,16 +48,16 @@
 
   
   $(document).ready(function() {
-    $(document).on('change', '.form-control-saledate', function() {
+    $(document).on('change', '.form-control-saleDate', function() {
       var saleDate;
-      saleDate = $(' #saledate ').val();
+      saleDate = $(' #saleDate ').val();
       var targetDate = new Date();
       targetDate.setDate(targetDate.getDate() + 10);
       var dd = targetDate.getDate();
       var mm = targetDate.getMonth() + 1;
       var yyyy = targetDate.getFullYear();
       var dateString = mm + "/" + dd + "/" + yyyy;
-      $(' #paymentduedate ').val(dateString);
+      $(' #paymentDueDate ').val(dateString);
     });
   });
 </script>
@@ -74,9 +74,9 @@
 
 <!-- <script type="text/javascript">
   function validate() {
-    var grosssalescash = document.forms["inputform"]["grosssalescash"].value;
+    var grossSalesCash = document.forms["inputform"]["grossSalesCash"].value;
 
-    if(isNaN(grosssalescash)){
+    if(isNaN(grossSalesCash)){
       event.preventDefault();
       event.stopPropagation();
       document.getElementById('invalid-feedback-gross-sales-cash').innerHTML="Please enter a valid numeric value";
