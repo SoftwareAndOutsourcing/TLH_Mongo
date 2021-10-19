@@ -5,9 +5,9 @@
     <div class="container py-5">
       <div class="container heading-container">
         <h1 class="display-1">True Legacy Homes Sale Manager</h1>
-          <h1 class="display-6">Sale Reporting Input</h1>
+        <h1 class="display-6">Sale Reporting Input</h1>
       </div>
-          <!-- <div class="btn-toolbar mt-4 mb-4 justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+      <!-- <div class="btn-toolbar mt-4 mb-4 justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group btn-group-lg me-2" role="group" aria-label="First group">
               <button type="button" class="btn btn-outline-secondary"><a href="#client-info" style="text-decoration: none; color: inherit;">Client Info</a><p>Incomplete</p></button>
               <button type="button" class="btn btn-outline-secondary"><a href="#sale-setup" style="text-decoration: none; color: inherit;">Sale Setup</a><p>Incomplete</p></button>
@@ -17,11 +17,13 @@
           </div>
  -->
 
-        <form id="inputform" action="/input1" name="inputform" method="POST" class="inner-outer-container py-4 needs-validation"
-            onSubmit="return validate()" novalidate>
-          <div class="text-center">
-            <!-- CLIENT INFO (SECTION 1 OF 4) -->
-            <div class="card-body p-5 text-center" style="background-color: #00bdb0;">
+      <form id="inputForm" action="/input1" name="inputForm" method="POST"
+        class="inner-outer-container py-4 needs-validation"
+        onSubmit="return validate()" novalidate>
+        <div class="text-center">
+          <!-- CLIENT INFO (SECTION 1 OF 4) -->
+          <div class="card-body p-5 text-center"
+            style="background-color: #00bdb0;">
             <!-- Row 1 -->
             <div class="row">
               <div class="col-lg-12 py-2">
@@ -29,7 +31,8 @@
                 <div class="row g-2">
                   <div class="col-lg-4 col-md-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingInputGrid" name="jobname" placeholder=""
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="jobName" placeholder=""
                         value="" required>
                       <label for="floatingInputGrid">Job Name</label>
                       <div class="invalid-feedback">
@@ -37,26 +40,26 @@
                       </div>
                     </div>
                   </div>
-                  
+
                   <div class="col-lg-4 col-md-6">
-                    <%- include ('partials/dropdown', {
-                          options: marketArray.map(m => {
-                            return { name: m.market_name, value: m.market_name }
-                          }),
-                          name: "market",
-                          label: "Market"
-                    }) -%>
+                    <%- include ('partials/dropdown', { options:
+                      marketArray.map(m=> {
+                      return { name: m.market_name, value: m.market_name }
+                      }),
+                      name: "market",
+                      label: "Market"
+                      }) -%>
                   </div>
 
 
                   <div class="col-lg-4 col-md-6">
-                    <%- include ('partials/dropdown', {
-                          options: serviceArray.map(m => {
-                            return { name: m.services_name, value: m.services_id }
-                          }),
-                          name: "services",
-                          label: "Services"
-                    }) -%>
+                    <%- include ('partials/dropdown', { options:
+                      serviceArray.map(m=> {
+                      return { name: m.services_name, value: m.services_id }
+                      }),
+                      name: "services",
+                      label: "Services"
+                      }) -%>
                   </div>
                 </div>
               </div>
@@ -67,7 +70,8 @@
                 <div class="row g-2">
                   <div class="col-lg-5 col-md-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingInputGrid" name="clientname" placeholder=""
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="clientName" placeholder=""
                         value="" required>
                       <label for="floatingInputGrid">Client Name</label>
                       <div class="invalid-feedback">
@@ -75,10 +79,11 @@
                       </div>
                     </div>
                   </div>
-                  
+
                   <div class="col-lg-4 col-md-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingInputGrid" name="clientemail" placeholder=""
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="clientEmail" placeholder=""
                         value="" required>
                       <label for="floatingInputGrid">Client Email</label>
                       <div class="invalid-feedback">
@@ -87,9 +92,10 @@
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-6">
-                    <div class="form-floating" id="datetimepicker">
-                      <input type="date" class="form-control form-control-saledate" id="saledate" name="saledate" placeholder=""
-                        value="" required>
+                    <div class="form-floating" id="dateimepicker">
+                      <input type="date"
+                        class="form-control form-control-saledate" id="saledate"
+                        name="saleDate" placeholder="" value="" required>
                       <label for="floatingInputGrid">Sale Date</label>
                       <span class="glyphicon glyphicon-calendar"></span>
                       <div class="invalid-feedback">
@@ -106,9 +112,11 @@
                 <div class="row g-2">
                   <div class="col-lg-7">
                     <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingInputGrid" name="clientmailingaddress1"
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="clientMailingAddress1"
                         placeholder="" value="" required>
-                      <label for="floatingInputGrid">Client Mailing Address 1</label>
+                      <label for="floatingInputGrid">Client Mailing Address
+                        1</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
@@ -116,14 +124,16 @@
                   </div>
                   <div class="col-lg-5">
                     <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingInputGrid" name="clientmailingaddress2"
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="clientMailingAddress2"
                         placeholder="" value="" required>
-                      <label for="floatingInputGrid">Client Mailing Address 2</label>
+                      <label for="floatingInputGrid">Client Mailing Address
+                        2</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
                     </div>
-                  </div>  
+                  </div>
                 </div>
               </div>
             </div>
@@ -132,7 +142,8 @@
                 <div class="row g-2">
                   <div class="col-lg-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingInputGrid" name="clientmailingcity"
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="clientMailingCity"
                         placeholder="" value="" required>
                       <label for="floatingInputGrid">City</label>
                       <div class="invalid-feedback">
@@ -141,18 +152,19 @@
                     </div>
                   </div>
                   <div class="col-lg-2">
-                    <%- include ('partials/dropdown', {
-                          options: stateArray.map(m => {
-                            return { name: m.state_abbreviation, value: m.state_name }
-                          }),
-                          name: "clientmailingstate",
-                          label: "State"
-                    }) -%>
+                    <%- include ('partials/dropdown', { options:
+                      stateArray.map(m=> {
+                      return { name: m.state_abbreviation, value: m.state_name }
+                      }),
+                      name: "clientmailingstate",
+                      label: "State"
+                      }) -%>
                   </div>
                   <div class="col-lg-2">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="zip" placeholder=""
-                        value="" required>
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="clientPostalCode"
+                        placeholder="" value="" required>
                       <label for="floatingInputGrid">Zip</label>
                       <div class="invalid-feedback">
                         Please enter a valid postal code (no dashes)
@@ -162,7 +174,7 @@
 
                 </div>
               </div>
-            </div> 
+            </div>
             <!-- Row 4 -->
             <div class="row">
               <div class="col-lg-12 py-1">
@@ -170,7 +182,8 @@
                   <div class="col-lg-5">
                     <div class="form-floating" id="datetimepicker">
 
-                      <input type="text" class="form-control" id="floatingInputGrid" name="checkpayableto"
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="checkPayableTo"
                         placeholder="" value="" required>
                       <label for="floatingInputGrid">Check Payable To</label>
                     </div>
@@ -178,20 +191,22 @@
                   <div class="col-lg-3">
                     <div class="form-floating">
 
-                      <input type="date" class="form-control" id="paymentduedate" name="paymentduedate"
-                        placeholder="" value="" required>
+                      <input type="date" class="form-control"
+                        id="paymentduedate" name="paymentDueDate" placeholder=""
+                        value="" required>
                       <label for="floatingInputGrid">Payment Due Date</label>
                       <span class="glyphicon glyphicon-calendar"></span>
                     </div>
                   </div>
                   <div class="col-lg-4">
-                    <%- include ('partials/dropdown', {
-                          options: salespersonArray.map(m => {
-                            return { name: m.salesperson_name, value: m.salesperson_id }
-                          }),
-                          name: "salesperson",
-                          label: "Salesperson"
-                     }) -%>
+                    <%- include ('partials/dropdown', { options:
+                      salesPersonArray.map(m=> {
+                      return { name: m.salesperson_name, value: m.salesperson_id
+                      }
+                      }),
+                      name: "salesPerson",
+                      label: "Sales person"
+                      }) -%>
                   </div>
                 </div>
               </div>
@@ -203,9 +218,11 @@
                   <div class="col-lg-4">
                     <div class="form-floating">
 
-                      <input type="number" class="form-control" id="floatingInputGrid" name="hoursstagingbudget"
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="hoursStagingBudget"
                         placeholder="" value="0" required>
-                      <label for="floatingInputGrid">Hours Staging Budget</label>
+                      <label for="floatingInputGrid">Hours Staging
+                        Budget</label>
 
                       <div class="invalid-feedback">
                         Please enter a value
@@ -214,9 +231,11 @@
                   </div>
                   <div class="col-lg-4">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="hoursestatesalebudget"
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="hoursEstateSaleBudget"
                         placeholder="" value="" required>
-                      <label for="floatingInputGrid">Hours Estate Sale Budget</label>
+                      <label for="floatingInputGrid">Hours Estate Sale
+                        Budget</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
@@ -224,17 +243,19 @@
                   </div>
                   <div class="col-lg-4">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="grosssalesbudget"
-                        onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder="" value="" 
-                        placeholder="" value="" required>
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="grossSalesBudget"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" placeholder="" value=""
+                        required>
                       <label for="floatingInputGrid">Gross Sales Budget</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
                     </div>
                   </div>
-                  
-                  
+
+
                 </div>
               </div>
             </div>
@@ -244,21 +265,23 @@
                 <div class="row g-2">
                   <div class="col-lg-4">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid"
-                        onchange="setTwoNumberDecimal(this)" min="0" step="any" name="minimumbase" placeholder=""
-                        value="" required>
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        name="minimumBase" placeholder="" value="" required>
                       <label for="floatingInputGrid">Minimum Base</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
                     </div>
                   </div>
-                  
+
                   <div class="col-lg-4">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid"
-                        onchange="setTwoNumberDecimal(this)" min="0" step="any" name="minimumactual" placeholder=""
-                        value="" required>
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        name="minimumActual" placeholder="" value="" required>
                       <label for="floatingInputGrid">Minimum Actual</label>
                       <div class="invalid-feedback">
                         Please enter a value
@@ -267,8 +290,10 @@
                   </div>
                   <div class="col-lg-4">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="minimumdiscount"
-                        onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder="" value="" required>
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="minimumDiscount"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" required>
                       <label for="floatingInputGrid">Minimum Discount</label>
                       <div class="invalid-feedback">
                         Please enter a value
@@ -280,8 +305,9 @@
             </div>
           </div>
 
-            <!-- SALE SETUP (SECTION 2 OF 4) -->
-            <div class="card-body p-5 text-center" style="background-color: #285880;">
+          <!-- SALE SETUP (SECTION 2 OF 4) -->
+          <div class="card-body p-5 text-center"
+            style="background-color: #285880;">
             <div class="row">
               <div class="col-lg-12 py-1">
                 <h4 class="input-section" id="sale-setup">Sale Setup</h4>
@@ -289,9 +315,11 @@
 
                   <div class="col-lg-4">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="hoursstagingactual"
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="hoursStagingActual"
                         placeholder="" value="">
-                      <label for="floatingInputGrid">Hours Staging Actual</label>
+                      <label for="floatingInputGrid">Hours Staging
+                        Actual</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
@@ -299,9 +327,11 @@
                   </div>
                   <div class="col-lg-4">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="hoursestatesaleactual"
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="hoursEstateSaleActual"
                         placeholder="" value="">
-                      <label for="floatingInputGrid">Hours Estate Sale Actual</label>
+                      <label for="floatingInputGrid">Hours Estate Sale
+                        Actual</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
@@ -309,63 +339,67 @@
                   </div>
                   <div class="col-lg-4">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="grosssalesactualclover"
-                        onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder="" value=""
-                        placeholder="" value="">
-                      <label for="floatingInputGrid">Gross Sales Actual Clover</label>
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="grossSalesActualClover"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" placeholder="" value="">
+                      <label for="floatingInputGrid">Gross Sales Actual
+                        Clover</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
                     </div>
                   </div>
-                  
+
                 </div>
               </div>
             </div>
-            
+
             <div class="row">
               <div class="col-lg-12 py-1">
                 <div class="row g-2">
                   <div class="col-lg-2">
-                    <%- include ('partials/dropdown', {
-                          options: cashierArray.map(m => {
-                            return { name: m.cashier_name, value: m.cashier_id }
-                          }),
-                          name: "cashier",
-                          label: "Cashier"
-                    }) -%>
+                    <%- include ('partials/dropdown', { options:
+                      cashierArray.map(m=> {
+                      return { name: m.cashier_name, value: m.cashier_id }
+                      }),
+                      name: "cashier",
+                      label: "Cashier"
+                      }) -%>
                   </div>
                   <div class="col-lg-2">
-                    <%- include ('partials/dropdown', {
-                          options: openingdayArray.map(m => {
-                            return { name: m.opening_day, value: m.opening_day_id }
-                          }),
-                          name: "openingday",
-                          label: "Opening Day"
-                    }) -%>
+                    <%- include ('partials/dropdown', { options:
+                      openingDayArray.map(m=> {
+                      return { name: m.opening_day, value: m.opening_day_id }
+                      }),
+                      name: "openingDay",
+                      label: "Opening Day"
+                      }) -%>
                   </div>
                   <div class="col-lg-2">
-                    <%- include ('partials/dropdown', {
-                          options: posidArray.map(m => {
-                            return { name: m.pos_id, value: m.pos_id_id }
-                          }),
-                          name: "posid",
-                          label: "POS ID"
-                    }) -%>
+                    <%- include ('partials/dropdown', { options:
+                      posIdArray.map(m=> {
+                      return { name: m.pos_id, value: m.pos_id_id }
+                      }),
+                      name: "posId",
+                      label: "POS ID"
+                      }) -%>
                   </div>
                   <div class="col-lg-2">
-                    <%- include ('partials/dropdown', {
-                          options: trailernumberArray.map(m => {
-                            return { name: m.trailer_number, value: m.trailer_number_id }
-                          }),
-                          name: "trailernumber",
-                          label: "Trailer #"
-                    }) -%>
+                    <%- include ('partials/dropdown', { options:
+                      trailerNumberArray.map(m=> {
+                      return { name: m.trailer_number, value:
+                      m.trailer_number_id }
+                      }),
+                      name: "trailerNumber",
+                      label: "Trailer #"
+                      }) -%>
                   </div>
                   <div class="col-lg-2">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="adview" placeholder=""
-                        value="" >
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="adView" placeholder=""
+                        value="">
                       <label for="floatingInputGrid">Ad View</label>
                       <div class="invalid-feedback">
                         Please enter a value
@@ -374,8 +408,9 @@
                   </div>
                   <div class="col-lg-2">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="emailssent" placeholder=""
-                        value="" >
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="emailsSent" placeholder=""
+                        value="">
                       <label for="floatingInputGrid">Emails Sent</label>
                       <div class="invalid-feedback">
                         Please enter a value
@@ -385,113 +420,126 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- SALE RESULTS (SECTION 3 OF 4) -->
+          <div class="card-body p-5 text-center"
+            style="background-color: #00bdb0;">
+            <div class="row">
+              <div class="col-lg-12 py-1">
+                <h4 class="input-section" id="sale-setup">Sale Results</h4>
+                <div class="row g-2">
+                  <div class="col-lg-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="transactionsOpeningDay"
+                        placeholder="" value="">
+                      <label for="floatingInputGrid">Transactions Opening
+                        Day</label>
+                      <div class="invalid-feedback">
+                        Please enter a value
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="transactions8To10"
+                        placeholder="" value="">
+                      <label for="floatingInputGrid">Transactions 8 to
+                        10</label>
+                      <div class="invalid-feedback">
+                        Please enter a value
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="form-floating">
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="transactionTotal"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" placeholder="" value="">
+                      <label for="floatingInputGrid">Transaction Total</label>
+                      <div class="invalid-feedback">
+                        Please enter a value
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <!-- SALE RESULTS (SECTION 3 OF 4) -->
-            <div class="card-body p-5 text-center" style="background-color: #00bdb0;">
-              <div class="row">
-                <div class="col-lg-12 py-1">
-                  <h4 class="input-section" id="sale-setup">Sale Results</h4>
-                  <div class="row g-2">
-                    <div class="col-lg-3">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputGrid" name="transactionsopeningday"
-                          placeholder="" value="" >
-                        <label for="floatingInputGrid">Transactions Opening Day</label>
-                        <div class="invalid-feedback">
-                          Please enter a value
-                        </div>
+            <div class="row">
+              <div class="col-lg-12 py-1">
+                <div class="row g-2">
+
+                  <!-- Row 2 of SALE RESULTS -->
+                  <div class="col-lg-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="grossSalesOpeningDay"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" placeholder="" value="">
+                      <label for="floatingInputGrid">Gross Sales Opening
+                        Day</label>
+                      <div class="invalid-feedback">
+                        Please enter a value
                       </div>
                     </div>
-                    
-                    <div class="col-lg-3">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputGrid" name="transactions8to10"
-                          placeholder="" value="" >
-                        <label for="floatingInputGrid">Transactions 8 to 10</label>
-                        <div class="invalid-feedback">
-                          Please enter a value
-                        </div>
-                      </div>
-                    </div> 
-                    <div class="col-lg-3">
-                      <div class="form-floating">
-                        <input type="number" class="form-control" id="floatingInputGrid" name="transactiontotal"
-                          onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder="" value="" 
-                          placeholder="" value="" >
-                        <label for="floatingInputGrid">Transaction Total</label>
-                        <div class="invalid-feedback">
-                          Please enter a value
-                        </div>
-                      </div>
-                    </div>    
                   </div>
+                  <div class="col-lg-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="grossSales8To10"
+                        placeholder="" value="">
+                      <label for="floatingInputGrid">Gross Sales 8 to 10</label>
+                      <div class="invalid-feedback">
+                        Please enter a value
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="form-floating">
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="grossSalesCreditDebit"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" placeholder="" value="">
+                      <label for="floatingInputGrid">Gross Sales
+                        Credit/Debit</label>
+                      <div class="invalid-feedback">
+                        Please enter a value
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="form-floating">
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="grossSalesCash"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" placeholder="" value="">
+                      <label for="floatingInputGrid">Gross Sales Cash</label>
+                      <div class="invalid-feedback"
+                        id="invalid-feedback-gross-sales-cash">
+                        Please enter a value
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-              
-                    
-
-              <div class="row">
-                <div class="col-lg-12 py-1">
-                  <div class="row g-2">
-
-                    <!-- Row 2 of SALE RESULTS -->
-                    <div class="col-lg-3">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputGrid" name="grosssalesopeningday"
-                          onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder="" value="" 
-                          placeholder="" value="" >
-                        <label for="floatingInputGrid">Gross Sales Opening Day</label>
-                        <div class="invalid-feedback">
-                          Please enter a value
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputGrid" name="grosssales8to10"
-                          placeholder="" value="" >
-                        <label for="floatingInputGrid">Gross Sales 8 to 10</label>
-                        <div class="invalid-feedback">
-                          Please enter a value
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="form-floating">
-                        <input type="number" class="form-control" id="floatingInputGrid" name="grosssalescreditdebit"
-                          onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder="" value="" 
-                          placeholder="" value="" >
-                        <label for="floatingInputGrid">Gross Sales Credit/Debit</label>
-                        <div class="invalid-feedback">
-                          Please enter a value
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="form-floating">
-                        <input type="number" class="form-control" id="floatingInputGrid" name="grosssalescash"
-                          onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder="" value="" 
-                          placeholder="" value="" >
-                        <label for="floatingInputGrid">Gross Sales Cash</label>
-                        <div class="invalid-feedback" id="invalid-feedback-gross-sales-cash">
-                          Please enter a value
-                        </div>
-                      </div>
-                    </div>
-                                       
-                  </div>
-                </div>
-              </div>
+            </div>
 
             <div class="row">
               <div class="col-lg-12 py-1">
                 <div class="row g-2">
                   <div class="col-lg-3">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" maxlength="2"
-                        name="commissionrate" onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder=""
-                        value=""  placeholder="" value="" >
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" maxlength="2"
+                        name="commissionRate"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" placeholder="" value="">
                       <label for="floatingInputGrid">Commission Rate</label>
                       <div class="invalid-feedback">
                         Please enter a value
@@ -500,14 +548,15 @@
                   </div>
                   <div class="col-lg-3">
                     <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingInputGrid" name="taxesfees" placeholder=""
-                        value="" >
+                      <input type="text" class="form-control"
+                        id="floatingInputGrid" name="taxesFees" placeholder=""
+                        value="">
                       <label for="floatingInputGrid">Taxes Fees</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
                     </div>
-                  </div>               
+                  </div>
                 </div>
 
               </div>
@@ -515,16 +564,18 @@
           </div>
 
           <!-- POST SALE (SECTION 4 OF 4) -->
-          <div class="card-body p-5 text-center" style="background-color: #285880;">
+          <div class="card-body p-5 text-center"
+            style="background-color: #285880;">
             <div class="row">
               <div class="col-lg-12 py-1">
                 <h4 class="input-section" id="sale-setup">Post Sale</h4>
                 <div class="row g-2">
                   <div class="col-lg-3 col-md-6">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="disposalfee"
-                        onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder="" value="" 
-                        placeholder="" value="">
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="disposalFee"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" placeholder="" value="">
                       <label for="floatingInputGrid">Disposal Fee</label>
                       <div class="invalid-feedback">
                         Please enter a value
@@ -533,8 +584,9 @@
                   </div>
                   <div class="col-lg-3 col-md-6">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="disposalloadcount"
-                        laceholder="" value=""  placeholder="" value="">
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="disposalLoadCount"
+                        laceholder="" value="" placeholder="" value="">
                       <label for="floatingInputGrid">Disposal Load Count</label>
                       <div class="invalid-feedback">
                         Please enter a value
@@ -543,10 +595,12 @@
                   </div>
                   <div class="col-lg-3 col-md-6">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="disposalvendorcost"
-                        onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder="" value="" 
-                        placeholder="" value="">
-                      <label for="floatingInputGrid">Disposal Vendor Cost</label>
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="disposalVendorCost"
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="" placeholder="" value="">
+                      <label for="floatingInputGrid">Disposal Vendor
+                        Cost</label>
                       <div class="invalid-feedback">
                         Please enter a value
                       </div>
@@ -554,30 +608,36 @@
                   </div>
                   <div class="col-lg-3 col-md-6">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="additionaldonationloancost"
-                        placeholder="" value="" onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder=""
-                        value="" >
-                      <label for="floatingInputGrid">Add'l Donation Loan Cost</label>
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="additionalDonationLoanCost"
+                        placeholder="" value=""
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="">
+                      <label for="floatingInputGrid">Add'l Donation Loan
+                        Cost</label>
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-6">
                     <div class="form-floating">
-                      <input type="number" class="form-control" id="floatingInputGrid" name="courtesydiscount"
-                        placeholder="" value="" onchange="setTwoNumberDecimal(this)" min="0" step="any" placeholder=""
-                        value="" >
+                      <input type="number" class="form-control"
+                        id="floatingInputGrid" name="courtesyDiscount"
+                        placeholder="" value=""
+                        onchange="setTwoNumberDecimal(this)" min="0" step="any"
+                        placeholder="" value="">
                       <label for="floatingInputGrid">Courtesy Discount</label>
                     </div>
-                  </div>              
+                  </div>
                 </div>
 
-              </div>          
-            </div>        
+              </div>
+            </div>
           </div>
-    
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Save</button> 
-       
-        </div>        
-        </form>
+
+          <button class="btn btn-primary btn-lg btn-block"
+            type="submit">Save</button>
+
+        </div>
+      </form>
     </div>
   </div>
 

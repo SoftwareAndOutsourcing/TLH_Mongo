@@ -10,7 +10,7 @@
 
   function init() {
     log('init');
-    const form = document.getElementById('inputform');
+    const form = document.getElementById('inputForm');
 
     sections = Array.from(form.getElementsByClassName('card-body')).map(section => ({
       section,

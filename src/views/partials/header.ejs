@@ -1,119 +1,124 @@
-<! DOCTYPE html>
-  <!-- navbar-collapse collapse id="navbarCollapse" -->
-  <html>
+<!DOCTYPE html>
+<!-- navbar-collapse collapse id="navbarCollapse" -->
+<html>
 
-  <head>
-    <title>
-      <%=title%>
-    </title>
+<head>
+  <title>
+    <%=title%>
+  </title>
 
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!--  jQuery -->
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script type="text/javascript" src="/js/scripts.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.17.1/bootstrap-table.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-table-expandable.css">
-    <script type="text/javascript" src="..js/bootstrap-table-expandable.js"></script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!--  jQuery -->
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript"
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="/js/scripts.js"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.17.1/bootstrap-table.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-table-expandable.css">
+  <script type="text/javascript"
+    src="..js/bootstrap-table-expandable.js"></script>
 
-    <script>
-      $(function () {
-        var bindDatePicker = function () {
-          $(".date").datetimepicker({
-            format: 'YYYY-MM-DD',
-            icons: {
-              time: "fa fa-clock-o",
-              date: "fa fa-calendar",
-              up: "fa fa-arrow-up",
-              down: "fa fa-arrow-down"
-            }
-          }).find('input:first').on("blur", function () {
-            // check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
-            // update the format if it's yyyy-mm-dd
-            var date = parseDate($(this).val());
-            if (!isValidDate(date)) {
-              //create date based on momentjs (we have that)
-              date = moment().format('YYYY-MM-DD');
-            }
-            $(this).val(date);
-          });
-        }
-        var isValidDate = function (value, format) {
-          format = format || false;
-          // lets parse the date to the best of our knowledge
-          if (format) {
-            value = parseDate(value);
+  <script>
+    $(function () {
+      var bindDatePicker = function () {
+        $(".date").datetimepicker({
+          format: 'YYYY-MM-DD',
+          icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
           }
-          var timestamp = Date.parse(value);
-          return isNaN(timestamp) == false;
-        }
-        var parseDate = function (value) {
-          var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
-          if (m)
-            value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
-          return value;
-        }
-        bindDatePicker();
-      });
-    </script>
-
-    <script type="text/javascript">
-      $(document).on('click', 'header nav ul li', function () {
-        $(this).addClass('active');
-        console.log('active class script run!');
-      });
-    </script>
-
-    <script type="text/javascript">
-      function validate() {
-        var hoursStagingBudget = document.forms["inputform"]["hoursStagingBudget"].value;
-        if (isNaN(hoursStagingBudget)) {
-          alert("Please enter a numeric value only!")
-        }
+        }).find('input:first').on("blur", function () {
+          // check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+          // update the format if it's yyyy-mm-dd
+          var date = parseDate($(this).val());
+          if (!isValidDate(date)) {
+            //create date based on momentjs (we have that)
+            date = moment().format('YYYY-MM-DD');
+          }
+          $(this).val(date);
+        });
       }
-    </script>
+      var isValidDate = function (value, format) {
+        format = format || false;
+        // lets parse the date to the best of our knowledge
+        if (format) {
+          value = parseDate(value);
+        }
+        var timestamp = Date.parse(value);
+        return isNaN(timestamp) == false;
+      }
+      var parseDate = function (value) {
+        var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+        if (m)
+          value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+        return value;
+      }
+      bindDatePicker();
+    });
+  </script>
 
-  </head>
+  <script type="text/javascript">
+    $(document).on('click', 'header nav ul li', function () {
+      $(this).addClass('active');
+      console.log('active class script run!');
+    });
+  </script>
 
-  <body>
-    <header id="navbar">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light nav-true-legacy">
-        <div class="container-fluid" style="display:flex;flex-direction:row;justify-content: space-between; padding: 0 2em      ">
-          <div>
-            <!-- navbar-brand for larger screens -->
-            <a class="navbar-brand" href="/">
-              <img src="../../img/TLH logo2.jpg" class="logo-image-brand" alt="True Legacy Homes" width="50" height="50">
-              True Legacy Homes
-            </a>
-          </div>
-          <div class="logged-in-user">
-            <%= username %>
+  <script type="text/javascript">
+    function validate() {
+      var hoursStagingBudget = document.forms["inputForm"]["hoursStagingBudget"].value;
+      if (isNaN(hoursStagingBudget)) {
+        alert("Please enter a numeric value only!")
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <header id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-true-legacy">
+      <div class="container-fluid"
+        style="display:flex;flex-direction:row;justify-content: space-between; padding: 0 2em      ">
+        <div>
+          <!-- navbar-brand for larger screens -->
+          <a class="navbar-brand" href="/">
+            <img src="../../img/TLH logo2.jpg" class="logo-image-brand"
+              alt="True Legacy Homes" width="50" height="50">
+            True Legacy Homes
+          </a>
+        </div>
+        <div class="logged-in-user">
+          <%= username %>
             <%if (username) { %>
               <span> | </span><a href="/logout">logout</a>
-            <% } %>
-          </div>
+              <% } %>
         </div>
-      </nav>
-    </header>
-  </body>
+      </div>
+    </nav>
+  </header>
+</body>
 
-  </html>
-        
-
-        
-    
-    
+</html>
