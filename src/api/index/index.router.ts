@@ -80,7 +80,7 @@ class IndexRouter {
         SELECT * from salesPerson; SELECT * from pos_id; SELECT * from trailer_number; 
         SELECT * from opening_day; SELECT * from state;`;
       pool.query(sql, (err, rows, results) => {
-        console.log(rows);
+        // console.log(rows);
         if (err)
           throw err;
         res.render('input1', {
@@ -124,7 +124,7 @@ class IndexRouter {
     });
 
     // POST request from the input form
-    this.router.post('/input1', requiresAuth(), async (req, res) => {
+    this.router.post('/input1/:id?', requiresAuth(), async (req, res) => {
       console.log("Trying to add a new sale")
       console.log("Job name is " + req.body.jobName)
 
@@ -176,16 +176,27 @@ class IndexRouter {
       };
 
       try {
-        const result = await this.db.collection('sales').insertOne(sale);
-        if (!result.insertedId) {
-          throw new Error('Error while inserting ');
+        let id = req.params.id;
+        if (id) {
+          const result = await this.db.collection('sales').updateOne(
+            { '_id': new ObjectId(id) },
+            { $set: sale },
+            { upsert: true }
+          );
+          console.log("Updated a input with id: " + id)
+        } else {
+          const result = await this.db.collection('sales').insertOne(sale);
+          console.log("Inserted a new input with id: " + id)
+          id = result.insertedId;
         }
-        console.log("Inserted a new input with id: " + result.insertedId)
+        if (!id) {
+          throw new Error('Error while inserting or updating sale.');
+        }
         console.log("market is " + sale.market)
         console.log("service is " + sale.services)
         console.log("sale date is " + sale.saleDate)
-        //res.end()
-        res.redirect('/')
+        res.json({ id: id });
+        res.end();
       } catch (err) {
         console.log("Failed to insert data into input table")
         console.log(err)
