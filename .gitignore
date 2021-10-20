@@ -1,4 +1,6 @@
 .env
 node_modules/
 archive/
+dist/
 readme_internal.md
+**/.DS_Store

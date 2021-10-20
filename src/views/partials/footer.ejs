@@ -48,9 +48,9 @@
 
   // Autofill 'payment due date' field with date 10 days out from 'sale date'  - ADDED 9/25/2021
   $(document).ready(function() {
-    $(document).on('change', '.form-control-saledate', function() {
+    $(document).on('change', '.form-control-saleDate', function() {
       var saleDate;
-      saleDate = $(' #saledate ').val();
+      saleDate = $(' #saleDate ').val();
       var targetDate = new Date(saleDate);
       targetDate.setDate(targetDate.getDate() + 11);
       var dd = ("0" + targetDate.getDate()).substr(-2);
@@ -59,7 +59,7 @@
       var dateString = [yyyy, mm, dd].join('-');
     
       // trigger() does not affect addEventListener callbacks
-      let o = $(' #paymentduedate ');
+      let o = $(' #paymentDueDate ');
       o.val(dateString).trigger('change');
       if (o.length)
         o[0].dispatchEvent(new Event('change'));
@@ -80,9 +80,9 @@
 
 <!-- <script type="text/javascript">
   function validate() {
-    var grosssalescash = document.forms["inputform"]["grosssalescash"].value;
+    var grossSalesCash = document.forms["inputForm"]["grossSalesCash"].value;
 
-    if(isNaN(grosssalescash)){
+    if(isNaN(grossSalesCash)){
       event.preventDefault();
       event.stopPropagation();
       document.getElementById('invalid-feedback-gross-sales-cash').innerHTML="Please enter a valid numeric value";
@@ -104,9 +104,9 @@
 </script>
 
 
-<script>
+<!--script>
     $('.dropdown-toggle').dropdown()
-</script>
+</script-->
 <script>
     var date = new Date().getFullYear();
     document.getElementById("year").innerHTML = date;
@@ -137,12 +137,10 @@
 
 </body>
 
-<script type="text/javascript">
-
+<!--script type="text/javascript">
 $(document).ready(function(){
 	$('.table').footable();
 });
-
-</script>
+</script-->
 
 </html>
