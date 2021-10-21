@@ -1,5 +1,4 @@
 import express from 'express';
-const bcrypt = require('bcrypt');
 import { Db, ObjectId } from 'mongodb';
 import { Sale } from '../../types'
 // Delete after testing users route with query included in this file (8/20/2021)
