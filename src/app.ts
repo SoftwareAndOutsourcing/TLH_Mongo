@@ -1,3 +1,4 @@
+import 'source-map-support/register';
 const express = require('express');
 import { MongoClient } from 'mongodb';
 const ejs = require('ejs');
