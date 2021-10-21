@@ -2,7 +2,6 @@ import 'source-map-support/register';
 const express = require('express');
 import { MongoClient } from 'mongodb';
 const ejs = require('ejs');
-const bcrypt = require('bcrypt');
 const methodOverride = require('method-override');
 const flash = require('connect-flash')
 const morgan = require('morgan');
