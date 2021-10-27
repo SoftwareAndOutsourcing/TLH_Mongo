@@ -1,52 +1,74 @@
 <%- include ('partials/header', {username: ""}) -%>
 
 <div class="container logo-container py-5 d-flex justify-content-center">
-    <img src="../img/TLH logo.png" class="logo-image" alt="True Legacy Homes" width="500" height="175">
+  <img src="../img/TLH logo.png"
+       class="logo-image"
+       alt="True Legacy Homes"
+       width="500"
+       height="175">
 </div>
 
 <div class="container container-header">
-<!-- <header class="jumbotron"> -->
-    <div class = "container py-5">
-        <h1 class="display-1">True Legacy Homes Sale Manager</h1>
+  <!-- <header class="jumbotron"> -->
+  <div class="container py-5">
+    <h1 class="display-1">True Legacy Homes Sale Manager</h1>
 
-            <div class="row">
-                <div class="col-lg-12 py-4">
-                    <!-- Split button -->
-                    
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-select-action">Select an Action</button>
-                            <button type="button" id="action-dropdown" class="btn btn-select-action dropdown-toggle" data-bs-toggle="dropdown">
-                            <span class="caret"></span>
-                            <span class="sr-only"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="action-dropdown">
-                            <li><a href="/input1" class="dropdown-item">Create New Sale</a></li>
-                            <!-- <li><a href="/input2" class="dropdown-item">Create New Sale 2</a></li> -->
-                            <li><a href="/sales" class="dropdown-item">View Current Sales</a></li>
-                            <!-- <li><a href="/" class="dropdown-item">View Previous Sales</a></li> -->
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#" class="dropdown-item">Admin</a></li>
-                            </ul>
-                        
-                        </div>
-                    
-                </div>
-            </div>
-            
+    <div class="row">
+      <div class="col-lg-12 py-4">
+        <!-- Split button -->
+
+        <div class="btn-group">
+          <button type="button"
+                  class="btn btn-select-action">Select an Action</button>
+          <button type="button"
+                  id="action-dropdown"
+                  class="btn btn-select-action dropdown-toggle"
+                  data-bs-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only"></span>
+          </button>
+          <ul class="dropdown-menu"
+              aria-labelledby="action-dropdown">
+            <li>
+              <a href="/sale"
+                 class="dropdown-item">
+                Create New Sale
+              </a>
+            </li>
+            <!-- <li><a href="/input2" class="dropdown-item">Create New Sale 2</a></li> -->
+            <li>
+              <a href="/sales"
+                 class="dropdown-item">View Current Sales
+              </a>
+            </li>
+            <!-- <li><a href="/" class="dropdown-item">View Previous Sales</a></li> -->
+            <li role="separator"
+                class="divider">
+            </li>
+            <li>
+              <a href="#"
+                 class="dropdown-item">
+                Admin
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
     </div>
-<!-- </header> -->
+
+  </div>
+  <!-- </header> -->
 
 </div>
 
 <div class="container container-actions">
-    <div class = "row">
-        <div class = "col-lg-12">
-            
-                
-            
-        </div>
-    </div>
-</div>
+  <div class="row">
+    <div class="col-lg-12">
 
+    </div>
+  </div>
+</div>
 
 <%- include ('partials/footer') -%>
