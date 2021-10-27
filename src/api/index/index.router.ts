@@ -43,8 +43,6 @@ class IndexRouter {
     //     });
     // });
 
-
-
     // this.router.get('/users', requiresAuth(), (req, res) => {
     //     let sql = "SELECT * FROM users";
     //     let query = pool.query(sql, (err, rows, fields) => {
@@ -74,27 +72,46 @@ class IndexRouter {
     })
 
     // Main input form GET route
-    this.router.get("/input1", requiresAuth(), (req, res) => {
-      let sql = `SELECT * from market; SELECT * from service; SELECT * from cashier; 
+    this.router.get("/sale/:id?", requiresAuth(), async (req, res) => {
+      try {
+        let sql = `SELECT * from market; SELECT * from service; SELECT * from cashier; 
         SELECT * from salesPerson; SELECT * from pos_id; SELECT * from trailer_number; 
         SELECT * from opening_day; SELECT * from state;`;
-      pool.query(sql, (err, rows, results) => {
-        // console.log(rows);
-        if (err)
-          throw err;
-        res.render('input1', {
-          title: 'True Legacy Homes Sale Manager New Sale',
-          authUser: req['oidc'].user,
-          marketArray: rows[0],
-          serviceArray: rows[1],
-          cashierArray: rows[2],
-          salesPersonArray: rows[3],
-          posIdArray: rows[4],
-          trailerNumberArray: rows[5],
-          openingDayArray: rows[6],
-          stateArray: rows[7],
+        let sale;
+        if (req.params.id) {
+          sale = await this.db.collection('sales')
+            .findOne({ _id: new ObjectId(req.params.id) }) as Sale;
+          if (!sale) {
+            throw 'Id not found.';
+          }
+        } else {
+          sale = {};
+        }
+
+        pool.query(sql, (err, rows, results) => {
+          // console.log(rows);
+          if (err)
+            throw err;
+          res.render('sale', {
+            title: 'True Legacy Homes Sale Manager New Sale',
+            authUser: req['oidc'].user,
+            marketArray: rows[0],
+            serviceArray: rows[1],
+            cashierArray: rows[2],
+            salesPersonArray: rows[3],
+            posIdArray: rows[4],
+            trailerNumberArray: rows[5],
+            openingDayArray: rows[6],
+            stateArray: rows[7],
+            sale: sale
+          });
         });
-      });
+      } catch (err) {
+        console.log("Failed to insert data into input table")
+        console.log(err)
+        res.sendStatus(500)
+        return
+      }
     })
 
     // All sales GET route
@@ -108,22 +125,8 @@ class IndexRouter {
       });
     })
 
-    // EDIT GET ROUTE - edit a sale
-    this.router.get("/sales/:id", requiresAuth(), async (req, res) => {
-      // the order with the provided ID
-      //render edit template with that sale
-      const sale = await this.db.collection('sales')
-        .findOne({ _id: new ObjectId(req.params.id) }) as Sale;
-
-      res.render('salesdetail', {
-        title: 'True Legacy Homes Sale Manager - Sales Detail',
-        saleresult: sale,
-        authUser: req['oidc'].user
-      });
-    });
-
     // POST request from the input form
-    this.router.post('/input1/:id?', requiresAuth(), async (req, res) => {
+    this.router.post('/sale/:id?', requiresAuth(), async (req, res) => {
       console.log("Trying to add a new sale")
       console.log("Job name is " + req.body.jobName)
 
@@ -137,7 +140,7 @@ class IndexRouter {
         minimumActual: req.body.minimumActual,
         saleDate: req.body.saleDate,
         hoursEstateSaleBudget: req.body.hoursEstateSaleBudget,
-        //  minimumDiscount : req.body.minimumDiscount,
+        minimumDiscount: req.body.minimumDiscount,
         cashier: req.body.cashier,
         hoursEstateSaleActual: req.body.hoursEstateSaleActual,
         salesPerson: req.body.salesPerson,
@@ -161,13 +164,13 @@ class IndexRouter {
         clientEmail: req.body.clientEmail,
         transactionTotal: req.body.transactionTotal,
         clientMailingAddress1: req.body.clientMailingAddress1,
-        grossSalesDebitCredit: req.body.grossSalesDebitCredit,
         clientMailingAddress2: req.body.clientMailingAddress2,
+        clientMailingCity: req.body.clientMailingCity,
+        grossSalesCreditDebit: req.body.grossSalesCreditDebit,
         grossSalesCash: req.body.grossSalesCash,
         cashOutsideClover: req.body.cashOutsideClover,
         commissionRate: req.body.commissionRate,
-        clientCity: req.body.clientMailingCity,
-        clientState: req.body.clientMailingState,
+        clientMailingState: req.body.clientMailingState,
         clientPostalCode: req.body.clientPostalCode,
         taxesFees: req.body.taxesFees,
         additionalDonationLoanCost: req.body.additionalDonationLoanCost,

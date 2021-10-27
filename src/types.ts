@@ -1,4 +1,7 @@
+import { ObjectId } from 'mongodb';
+
 export interface Sale {
+  _id?: ObjectId,
   jobName: string,
   hoursStagingBudget: string,
   market: string,
@@ -8,7 +11,7 @@ export interface Sale {
   minimumActual: string,
   saleDate: string,
   hoursEstateSaleBudget: string,
-  //  minimumDiscount : string,
+  minimumDiscount : string,
   cashier: string,
   hoursEstateSaleActual: string,
   salesPerson: string,
@@ -32,13 +35,13 @@ export interface Sale {
   clientEmail: string,
   transactionTotal: string,
   clientMailingAddress1: string,
-  grossSalesDebitCredit: string,
   clientMailingAddress2: string,
+  clientMailingCity: string,
+  clientMailingState: string,
+  grossSalesCreditDebit: string,
   grossSalesCash: string,
   cashOutsideClover: string,
   commissionRate: string,
-  clientCity: string,
-  clientState: string,
   clientPostalCode: string,
   taxesFees: string,
   additionalDonationLoanCost: string,
