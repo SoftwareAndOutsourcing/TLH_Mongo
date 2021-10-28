@@ -1,32 +1,40 @@
 const form = document.getElementById('inputForm');
 const cards = form.getElementsByClassName('card-body');
 const submit = form.getElementsByTagName('button')[0];
+
+let isNew;
 let saleId;
 let currentCard;
 
 const setupEditSale = (id) => {
   submit.innerHTML = 'Save Changes';
+  for (const card of cards) {
+    card.classList.add('was-validated');
+  }
+  isNew = false;
   saleId = id;
-  currentCard = 3;  
-  setupSaveButton();  
+  currentCard = 3;
+  setupSaveButton();
 }
 
 const setupNewSale = () => {
-  cards[1].style.display = 'none';
-  cards[2].style.display = 'none';
-  cards[3].style.display = 'none';
+  for (let i = 1; i <= 3; i++) {
+    cards[i].style.display = 'none';
+  }
+  isNew = true;
   currentCard = 0;
   setupSaveButton();
 }
 
 const setupSaveButton = () => {
   submit.addEventListener('click', () => {
-    cards[currentCard].classList.add('was-validated');
-    if (!form.checkValidity()) {
-      for (let i = 0; i <= currentCard; i++) {
-        if (cards[i].querySelectorAll(':invalid').length) {
-          return;
-        }
+    if (isNew) {
+      cards[currentCard].classList.add('was-validated');
+    }
+
+    for (let i = 0; i <= currentCard; i++) {
+      if (cards[i].querySelectorAll(':invalid').length) {
+        return;
       }
     }
 
